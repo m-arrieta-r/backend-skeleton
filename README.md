@@ -32,7 +32,4 @@ This structure has been successfully tested with:
 - **Clean Architecture** by Uncle Bob
 - **Object Oriented Software Engineering - A Use Case Driven Approach** by Ivar Jacobson
 
-## FAQ
 
-- **Can a use case call another one?**
-  While generally discouraged, there might be specific scenarios where it's useful. However, excessive use can lead to a less organized structure.
