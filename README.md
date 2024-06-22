@@ -28,8 +28,6 @@ This structure has been successfully tested with:
 
 - **Solid Book** by Khalil Stemmler (highly recommended all his material!)
 - **Screaming Architecture** by Uncle Bob
-- **Writing Effective Use Cases** by Alistair Cockburn
 - **Clean Architecture** by Uncle Bob
-- **Object Oriented Software Engineering - A Use Case Driven Approach** by Ivar Jacobson
 
 
