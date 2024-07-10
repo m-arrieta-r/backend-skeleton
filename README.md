@@ -2,7 +2,7 @@
 
 ## TL;DR
 
-A practical, scalable folder structure designed for both Minimum Viable Products (MVPs) and large-scale enterprise projects. This structure emphasizes use cases, enhancing readability and maintainability.
+A practical, scalable folder structure designed for both Minimum Viable Products (MVPs) and large-scale enterprise projects.
 
 ## Motivation
 
