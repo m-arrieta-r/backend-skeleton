@@ -38,16 +38,13 @@ This structure has been successfully tested with:
 
 - NestJS (avoiding excessive service files)
 - Serverless architectures using Lambda handlers
-- ExpressJS
-- KoaJS
+- NodeJs (ExpressJS, KoaJS, CLI)
 - Domain-Driven Design (DDD)
 - MVPs (without clean or hexagonal architecture)
 - Enterprise Projects (with clean architecture and DDD)
 
 ## Inspiration
-
 - [DDD Forum by Khalil Stemmler](https://github.com/stemmlerjs/ddd-forum)
-- **Screaming Architecture** by Uncle Bob
-- **Clean Architecture** by Uncle Bob
+- [Screaming Architecture  by Uncle](https://web.archive.org/web/20140702193834/http://blog.8thlight.com/uncle-bob/2011/09/30/Screaming-Architecture.html)
 
 
