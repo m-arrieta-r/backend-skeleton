@@ -35,16 +35,16 @@ Let's move away from big service files and horizontal folder structures!
 ## Compatibility
 
 This structure has been successfully tested with:
-
-- NestJS (avoiding excessive service files)
 - Serverless architectures using Lambda handlers
 - NodeJs (ExpressJS, KoaJS, CLI)
 - Domain-Driven Design (DDD)
 - MVPs (without clean or hexagonal architecture)
+- NestJS (avoiding excessive service files)
 - Enterprise Projects (with clean architecture and DDD)
 
 ## Inspiration
 - [DDD Forum by Khalil Stemmler](https://github.com/stemmlerjs/ddd-forum)
-- [Screaming Architecture  by Uncle](https://web.archive.org/web/20140702193834/http://blog.8thlight.com/uncle-bob/2011/09/30/Screaming-Architecture.html)
+- [Clean architecture by Uncle Bob](https://web.archive.org/web/20140619161546/https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+- [Screaming Architecture by Uncle Bob](https://web.archive.org/web/20140702193834/http://blog.8thlight.com/uncle-bob/2011/09/30/Screaming-Architecture.html)
 
 
