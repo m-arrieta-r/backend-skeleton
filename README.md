@@ -4,27 +4,18 @@
 
 A practical, scalable folder structure designed for both Minimum Viable Products (MVPs) and large-scale enterprise projects.
 
-```
-.
-└── src
-    └── module-a
-        ├── application-cases
-        │   ├── README.md
-        │   └── app-case-a
-        │       ├── __tests__
-        │       ├── application-rules
-        │       ├── http-express-controller
-        │       └── lambda-handler-controller
-        ├── domain
-        │   ├── README.md
-        │   └── __tests__
-        └── repository
-            ├── README.md
-            └── __tests__
-```
+## Explanation
+- [Application cases](./doc/application-cases/README.md)
+- [Domain](./doc/domain/README.md)
+- [Repository](./doc/repository/README.md)
+
+## Examples
+- [Simple MVP](./examples/simple-mvp)
+- [MVP](./examples/simple-mvp)
+- [Enterprise-project](./examples/enterprise-project)
+
 
 ## Motivation
-
 Many existing folder conventions rely on traditional layered structures (package by layer), sometimes mistakenly labeled as "hexagonal" or "clean architecture." However, these architectures don't inherently dictate a horizontal (layered) approach.
 
 The most effective way to highlight functionality is by organizing folders around application cases.
@@ -55,7 +46,7 @@ This structure has been successfully tested with:
 
 ## Inspiration
 
-- **Solid Book** by Khalil Stemmler (highly recommended all his material!)
+- [DDD Forum by Khalil Stemmler](https://github.com/stemmlerjs/ddd-forum)
 - **Screaming Architecture** by Uncle Bob
 - **Clean Architecture** by Uncle Bob
 

@@ -1,4 +1,4 @@
-## Domain (Business rules)
+## Domain (Enterprise business rules)
 
 A prefect place to DDD
 
