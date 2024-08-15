@@ -22,8 +22,6 @@ A practical, scalable folder structure designed for both Minimum Viable Products
 ## Motivation
 Many existing folder conventions rely on traditional layered structures (package by layer), sometimes mistakenly labeled as "hexagonal" or "clean architecture." However, these architectures don't inherently dictate a horizontal (layered) approach.
 
-The most effective way to highlight functionality is by organizing folders around application cases.
-
 Let's move away from big service files and horizontal folder structures!
 
 ## Notable Quotes
