@@ -4,6 +4,10 @@
 
 A practical, scalable folder structure designed for both Minimum Viable Products (MVPs) and large-scale enterprise projects.
 
+## Manifesto
+- **Prioritize Critical Thinking:** Don't always rely on common sense; it might not be accurate.
+- **Learn from Others:** Many people have likely encountered similar challenges. Follow their lead.
+
 ## Explanation
 - [Application cases](./doc/application-cases/README.md)
 - [Domain](./doc/domain/README.md)
