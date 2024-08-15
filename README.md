@@ -1,7 +1,6 @@
 # File Structure / Skeleton
 
 ## TL;DR
-
 A practical, scalable folder structure designed for both Minimum Viable Products (MVPs) and large-scale enterprise projects.
 
 ## Manifesto
@@ -16,9 +15,8 @@ A practical, scalable folder structure designed for both Minimum Viable Products
 ## Examples
 - [Simple Serverless MVP](./examples/simple-mvp-serverless)  
 ![Simple Serverless MVP](./examples/simple-mvp-serverless/doc/simple-serverless-mvp-look2.png)
-
-- [MVP](./examples/simple-mvp)
-- [Enterprise-project](./examples/enterprise-project)
+- [Enterprise-project](./examples/enterprise-project). 
+![Enterprise Architecture Diagram](./examples/enterprise-project/doc/diagram-look1.png)
 
 
 ## Motivation
