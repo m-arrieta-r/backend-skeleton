@@ -10,7 +10,7 @@ A practical, scalable folder structure designed for both Minimum Viable Products
 - [Repository](./doc/repository/README.md)
 
 ## Examples
-- [Simple Serverless MVP](./examples/simple-mvp-serverless)
+- [Simple Serverless MVP](./examples/simple-mvp-serverless)  
 ![Simple Serverless MVP](./examples/simple-mvp-serverless/doc/simple-serverless-mvp-look1.png)
 
 - [MVP](./examples/simple-mvp)
