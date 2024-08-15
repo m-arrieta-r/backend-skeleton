@@ -11,7 +11,7 @@ A practical, scalable folder structure designed for both Minimum Viable Products
 
 ## Examples
 - [Simple Serverless MVP](./examples/simple-mvp-serverless)  
-![Simple Serverless MVP](./examples/simple-mvp-serverless/doc/simple-serverless-mvp-look1.png)
+![Simple Serverless MVP](./examples/simple-mvp-serverless/doc/simple-serverless-mvp-look2.png)
 
 - [MVP](./examples/simple-mvp)
 - [Enterprise-project](./examples/enterprise-project)
