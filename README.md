@@ -6,6 +6,8 @@ A practical, scalable folder structure designed for both Minimum Viable Products
 ## Manifesto
 - **Prioritize Critical Thinking:** Don't always rely on common sense; it might not be accurate.
 - **Learn from Others:** Many people (some of them popular) have likely encountered similar challenges. Follow their lead.
+- **Discover Better Ways to Develop Software**: Embracing experimentation is crucial for enhancing project success.
+ 
 
 ## Explanation
 - [Application cases](./doc/application-cases/README.md)
