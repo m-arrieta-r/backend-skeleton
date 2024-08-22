@@ -1,11 +1,11 @@
-# File Structure / Skeleton / Package by Application Cases
+# File Structure / Skeleton / Package by Application Cases 
 
 ## TL;DR
-A flexible folder structure designed for projects of all sizes (MVPs, large complex enterprise projects), based on organizing code by specific package by application cases.
+A flexible folder structure designed for projects of all sizes (MVPs, large complex enterprise projects), based on organizing code by specific package by application cases (app cases).
 
 ## Explanation
 This isn't a brand new architecture, but rather a clear way to visualize and implement "vertical slicing" in your codebase.
-- [Application cases](./doc/application-cases/README.md)
+- [Application cases (app cases)](./doc/application-cases/README.md)
 - [Domain](./doc/domain/README.md)
 
 ## Examples
