@@ -10,7 +10,7 @@ This isn't a brand new architecture, but rather a clear way to visualize and imp
 
 ## Examples
 - [Simple Serverless MVP](./examples/simple-mvp-serverless)  
-![Simple Serverless MVP](./examples/simple-mvp-serverless/doc/diagram-look4.png)
+![Simple Serverless MVP](./examples/simple-mvp-serverless/doc/diagram-look4.svg)
 - [Enterprise-project](./examples/enterprise-project). 
 ![Enterprise Architecture Diagram](./examples/enterprise-project/doc/diagram-look3.svg)
 
