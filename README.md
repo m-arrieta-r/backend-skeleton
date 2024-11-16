@@ -10,9 +10,9 @@ This isn't a brand new architecture, but rather a clear way to visualize and imp
 
 ## Examples
 - [Simple Serverless MVP](./examples/simple-mvp-serverless)  
-![Simple Serverless MVP](./examples/simple-mvp-serverless/doc/diagram-look3.png)
+![Simple Serverless MVP](./examples/simple-mvp-serverless/doc/diagram-look4.png)
 - [Enterprise-project](./examples/enterprise-project). 
-![Enterprise Architecture Diagram](./examples/enterprise-project/doc/diagram-look2.png)
+![Enterprise Architecture Diagram](./examples/enterprise-project/doc/diagram-look3.svg)
 
 ## Motivation
 Many existing folder conventions rely on traditional layered structures (package by layer), sometimes mistakenly labeled as "hexagonal" or "clean architecture." However, these architectures don't inherently dictate a horizontal (layered) approach.
