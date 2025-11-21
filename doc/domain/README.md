@@ -11,3 +11,7 @@ So, when to use DDD?
 > — Martin, Fowler. Patterns of Enterprise Application Architecture (Addison-Wesley Signature Series (Fowler))
 
 ![1723421869583](image/README/1723421869583.png)
+
+Is DDD Overrated?
+> "you can only say DDD is overrated once you've achieved mastery over it. At this point, you can toss it aside. All the tactical patterns, techniques, approaches — you've already absorbed the wisdom. You're the boss. You don't need rules, cerimonies, other peoples' best practices. You set your own rules. Because you understand design, you know what's good, bad, too much design, too little, what the correct amount thereof is (see the Golden Mean) — you now have room to experiment and get creative."
+> — Khalil Stemmler. https://khalilstemmler.com/blogs/domain-driven-design/is-ddd-overrated/
