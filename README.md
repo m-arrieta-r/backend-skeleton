@@ -1,7 +1,12 @@
-# File Structure / Skeleton / Package by Application Cases 
+# Backend Skeleton / Vertical Slicing / Clean Architecture
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub Activity](https://img.shields.io/github/last-commit/m-arrieta-r/backend-skeleton)](https://github.com/m-arrieta-r/backend-skeleton/commits/main)
+[![GitHub stars](https://img.shields.io/github/stars/m-arrieta-r/backend-skeleton?style=social)](https://github.com/m-arrieta-r/backend-skeleton/stargazers)
 
 ## TL;DR
-A flexible folder structure designed for projects of all sizes (MVPs, large complex enterprise projects), based on organizing code by specific package by application cases (app cases).
+A flexible, production-ready **Backend Skeleton** designed for **Node.js** and **TypeScript** projects of all sizes. It implements **Vertical Slicing** and **Clean Architecture** by organizing code into specific **Application Cases** (app cases), promoting high maintainability and decoupled domain logic.
+
 
 ## Explanation
 This isn't a brand new architecture, but rather a clear way to visualize and implement "vertical slicing" in your codebase.
@@ -47,3 +52,34 @@ This structure has been successfully tested with:
 - **Prioritize Critical Thinking:** Don't always rely on common sense; it might not be accurate.
 - **Learn from Others:** Many people (some of them popular) have likely encountered similar challenges. Follow their lead.
 - **Discover Better Ways to Develop Software**: Embracing experimentation is crucial for enhancing project success.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
+
+---
+
+[MIT](https://opensource.org/licenses/MIT) © 2026 m-arrieta-r
+
+<!--
+  SEO Metadata for Search Engines (JSON-LD)
+  This helps search engines like Google understand the repository structure and license.
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  "name": "backend-skeleton",
+  "description": "A flexible folder structure designed for projects of all sizes, based on organizing code by specific package by application cases.",
+  "codeRepository": "https://github.com/miarrietar/backend-skeleton",
+  "programmingLanguage": "TypeScript",
+  "license": "https://github.com/miarrietar/backend-skeleton/blob/main/LICENSE.md",
+  "author": {
+    "@type": "Person",
+    "name": "m-arrieta-r"
+  },
+  "keywords": "backend, skeleton, architecture, vertical-slicing, ddd, clean-architecture, hexagonal-architecture, typescript, nodejs"
+}
+</script>
+
+

@@ -1,0 +1,28 @@
+{
+  "name": "backend-skeleton",
+  "version": "1.0.0",
+  "description": "A flexible folder structure designed for projects of all sizes, based on organizing code by specific package by application cases.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m-arrieta-r/backend-skeleton.git"
+  },
+  "keywords": [
+    "backend",
+    "skeleton",
+    "architecture",
+    "vertical-slicing",
+    "ddd",
+    "clean-architecture",
+    "hexagonal-architecture",
+    "typescript",
+    "nodejs"
+  ],
+  "author": "m-arrieta-r",
+
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/miarrietar/backend-skeleton/issues"
+  },
+  "homepage": "https://github.com/miarrietar/backend-skeleton#readme"
+}
