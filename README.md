@@ -18,6 +18,7 @@ This isn't a brand new architecture, but rather a clear way to visualize and imp
 ![Simple Serverless MVP](./examples/simple-mvp-serverless/doc/diagram-look4.svg)
 - [Enterprise-project](./examples/enterprise-project). 
 ![Enterprise Architecture Diagram](./examples/enterprise-project/doc/diagram-look4.svg)
+- [Event Sourcing POC (Lending Origination System)](https://github.com/m-arrieta-r/event-sourcing-poc)
 
 ## Motivation
 Many existing folder conventions rely on traditional layered structures (package by layer), sometimes mistakenly labeled as "hexagonal" or "clean architecture." However, these architectures don't inherently dictate a horizontal (layered) approach.
