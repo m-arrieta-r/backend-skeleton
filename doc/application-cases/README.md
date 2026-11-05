@@ -1,23 +1,42 @@
-## Application Cases (App Cases)
-Every project independently of its size and structure has application cases, the key of this repository is promoting package by application cases.
+# Application cases (app cases)
 
-#### Inside this folder, you can create:
-- controller or handler: convert data from the format most convenient for the use cases and entities.
-- app-rules: orchestrate the flow of data to and from the entities, and direct those entities to use their enterprise wide business rules to achieve the goals of the use case.
+Every project, whatever its size or structure, has application cases. The core idea of this
+repository is **package by application case**.
 
-### What is an Application Cases?
+## What is an application case?
 
-An application case is a modular unit that encapsulates the logic and functionality for one or more specific use cases within your application.
+An application case is **one entry point into your application that fulfils one user intent**.
+Depending on your stack, that entry point is:
 
-By organizing your code into application cases, you can achieve a more focused and maintainable codebase.
+- an endpoint in an HTTP server (REST, RPC)
+- a handler function in AWS Lambda (or any FaaS)
+- an operation in a GraphQL server
+- a CLI command or a queue/event consumer
 
-Each application case within this folder serves as an entry point into your application. Depending on your technology stack, this entry point could be:
+Each application case gets its own folder, named `verb-noun` (`sign-up-user`, `publish-post`).
+Organizing code this way keeps everything about one intent together and makes the folder tree
+describe what the application *does*.
 
-* An endpoint in a basic HTTP server (e.g., REST API)
-* A handler function in AWS Lambda
-* An operation in a GraphQL server
+## What goes inside the folder
 
-### Why not use cases?
-Use cases do not necessarily map tidily to application cases that's why I looked for another term.
+| File | Role |
+|---|---|
+| `README.md` | **Slice card**: trigger, input, output, errors, dependencies, business rules. |
+| `app-rules.ts` | Orchestrates the flow of data to and from the entities, and directs those entities to apply their enterprise-wide business rules to achieve the goal of the app case. Framework-agnostic. |
+| `app-rules.test.ts` | Covers the success path and every error. |
+| `http-controller.ts` / `lambda-handler.ts` / … | Converts data between the format most convenient for the transport and the format the app rules expect. Makes no business decisions. |
 
-Based on [DDD Forum use cases](https://github.com/stemmlerjs/ddd-forum/tree/master/src/modules/users/useCases)
+One app case can have **several controllers** (for example, HTTP and Lambda) sharing the same
+`app-rules.ts`. See [enterprise-project](../../examples/enterprise-project).
+
+The full rules (naming, dependency directions, definition of done) are in
+[conventions.md](../conventions.md). A runnable example is
+[blog-api](../../examples/blog-api).
+
+## Why not "use cases"?
+
+Use cases, in the requirements sense, do not always map neatly to entry points. One use case
+can span several endpoints, and one endpoint can serve several use cases. "Application case"
+names exactly the thing you put in a folder: an entry point plus its application rules.
+
+Inspired by the [`useCases` folders in DDD Forum](https://github.com/stemmlerjs/ddd-forum/tree/master/src/modules/users/useCases).

@@ -1,0 +1,20 @@
+{
+  "name": "blog-api",
+  "private": true,
+  "type": "module",
+  "description": "Runnable reference for backend-skeleton: vertical slices (app cases), zero runtime dependencies.",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "start": "node src/main/start.ts",
+    "test": "node --test \"src/**/*.test.ts\" \"test/**/*.test.ts\"",
+    "typecheck": "tsc --noEmit",
+    "check:boundaries": "node ../../scripts/check-boundaries.mjs src",
+    "check": "npm run typecheck && npm run check:boundaries && npm test"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "~5.9.3"
+  }
+}
