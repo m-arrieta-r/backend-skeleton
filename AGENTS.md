@@ -12,7 +12,8 @@ and examples, so they must stay consistent with each other.
 - Runnable reference: [`examples/blog-api`](examples/blog-api), with zero runtime dependencies on Node ≥ 22.18.
 - Boundary checker: [`scripts/check-boundaries.mjs`](scripts/check-boundaries.mjs), with zero dependencies.
 - Portable assets for other projects: [`templates/AGENTS.md`](templates/AGENTS.md) and
-  [`skills/create-app-case`](skills/create-app-case/SKILL.md).
+  [`skills/create-app-case`](skills/create-app-case/SKILL.md), published as the Claude Code plugin
+  `app-cases` through [`.claude-plugin/marketplace.json`](.claude-plugin/marketplace.json).
 - Map for LLMs: [`llms.txt`](llms.txt).
 
 ## Commands
@@ -44,6 +45,7 @@ Inside `examples/blog-api`, `npm start` runs the demo server on port 3000.
 
 ```
 AGENTS.md, CLAUDE.md, llms.txt   agent entry points
+.claude-plugin/marketplace.json  Claude Code marketplace: plugin "app-cases" = skills/
 doc/                             concepts: conventions, app cases, domain, repository, AI agents
 examples/blog-api/               runnable, tested reference (start here for code)
 examples/*                       folder-shape illustrations (not runnable, intentionally minimal)

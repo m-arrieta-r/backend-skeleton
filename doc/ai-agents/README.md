@@ -42,6 +42,8 @@ cohesion and locality. Agents simply make the cost of poor locality visible on e
    containing `@AGENTS.md`).
 2. Copy [`scripts/check-boundaries.mjs`](../../scripts/check-boundaries.mjs) and add it to your check
    command and to CI.
-3. Install the [`create-app-case`](../../skills/create-app-case/SKILL.md) skill (Agent Skills format)
-   in your agent's skills folder, or paste it into your agent's instructions.
+3. Install the [`create-app-case`](../../skills/create-app-case/SKILL.md) skill (Agent Skills format).
+   In Claude Code: `/plugin marketplace add m-arrieta-r/backend-skeleton`, then
+   `/plugin install app-cases@backend-skeleton`. For other agents, copy the skill folder into the
+   agent's skills folder, or paste it into the agent's instructions.
 4. Ask your agent: *"Create the app case `cancel-order` in the orders module."*

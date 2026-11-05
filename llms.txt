@@ -17,7 +17,7 @@ Key rules: an app case never imports another app case; domain/ is pure; modules 
 
 ## Tools for your project
 - [AGENTS.md template](https://github.com/m-arrieta-r/backend-skeleton/blob/main/templates/AGENTS.md)
-- [create-app-case Agent Skill](https://github.com/m-arrieta-r/backend-skeleton/blob/main/skills/create-app-case/SKILL.md)
+- [create-app-case Agent Skill](https://github.com/m-arrieta-r/backend-skeleton/blob/main/skills/create-app-case/SKILL.md): in Claude Code, `/plugin marketplace add m-arrieta-r/backend-skeleton` then `/plugin install app-cases@backend-skeleton`
 - [check-boundaries.mjs](https://github.com/m-arrieta-r/backend-skeleton/blob/main/scripts/check-boundaries.mjs)
 
 ## Optional

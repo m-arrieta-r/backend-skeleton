@@ -56,6 +56,20 @@ npm run check   # typecheck + boundary rules + 24 tests
 npm start       # http://localhost:3000
 ```
 
+## Use it with your coding agent
+
+In Claude Code, install the [`create-app-case`](skills/create-app-case/SKILL.md) skill as a plugin:
+
+```text
+/plugin marketplace add m-arrieta-r/backend-skeleton
+/plugin install app-cases@backend-skeleton
+```
+
+Then ask *"Create the app case `cancel-order` in the orders module"*, or run
+`/app-cases:create-app-case`. For other agents, copy [`skills/create-app-case`](skills/create-app-case)
+into the agent's skills folder. Pair it with [`templates/AGENTS.md`](templates/AGENTS.md) and
+[`check-boundaries.mjs`](scripts/check-boundaries.mjs) in your project.
+
 ## Examples
 
 | Example | What it shows | Runnable |
