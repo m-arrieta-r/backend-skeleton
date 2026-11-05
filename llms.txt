@@ -1,0 +1,24 @@
+# backend-skeleton
+
+> Reference for organizing backend code (TypeScript/Node.js) by **app cases**, also called vertical slicing, with optional Clean Architecture and DDD. One folder per user intent (endpoint, handler, command) holds its controller, app rules, tests and slice card. It includes a runnable dependency-free example, a zero-dependency import-boundary checker, and portable AGENTS.md and Agent Skill files for coding agents.
+
+Key rules: an app case never imports another app case; domain/ is pure; modules are imported only through their index.ts; cross-module needs are injected as functions; the composition root (main/) wires everything.
+
+## Docs
+- [Conventions (canonical rules, glossary, layouts)](https://github.com/m-arrieta-r/backend-skeleton/blob/main/doc/conventions.md)
+- [Why vertical slicing matters for AI agents](https://github.com/m-arrieta-r/backend-skeleton/blob/main/doc/ai-agents/README.md)
+- [Application cases](https://github.com/m-arrieta-r/backend-skeleton/blob/main/doc/application-cases/README.md)
+- [Domain (optional)](https://github.com/m-arrieta-r/backend-skeleton/blob/main/doc/domain/README.md)
+- [Repository (optional)](https://github.com/m-arrieta-r/backend-skeleton/blob/main/doc/repository/README.md)
+
+## Examples
+- [blog-api: runnable, tested reference](https://github.com/m-arrieta-r/backend-skeleton/tree/main/examples/blog-api)
+- [Package by layer vs feature vs app case](https://github.com/m-arrieta-r/backend-skeleton/tree/main/examples/vs)
+
+## Tools for your project
+- [AGENTS.md template](https://github.com/m-arrieta-r/backend-skeleton/blob/main/templates/AGENTS.md)
+- [create-app-case Agent Skill](https://github.com/m-arrieta-r/backend-skeleton/blob/main/skills/create-app-case/SKILL.md)
+- [check-boundaries.mjs](https://github.com/m-arrieta-r/backend-skeleton/blob/main/scripts/check-boundaries.mjs)
+
+## Optional
+- [Contributing](https://github.com/m-arrieta-r/backend-skeleton/blob/main/CONTRIBUTING.md)

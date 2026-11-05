@@ -1,86 +1,118 @@
-# Backend Skeleton / Vertical Slicing / Clean Architecture
+# Backend Skeleton: Vertical Slicing by App Cases
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub Activity](https://img.shields.io/github/last-commit/m-arrieta-r/backend-skeleton)](https://github.com/m-arrieta-r/backend-skeleton/commits/main)
+[![CI](https://github.com/m-arrieta-r/backend-skeleton/actions/workflows/ci.yml/badge.svg)](https://github.com/m-arrieta-r/backend-skeleton/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
+[![AGENTS.md](https://img.shields.io/badge/AGENTS.md-ready-blue)](AGENTS.md)
 [![GitHub stars](https://img.shields.io/github/stars/m-arrieta-r/backend-skeleton?style=social)](https://github.com/m-arrieta-r/backend-skeleton/stargazers)
 
-## TL;DR
-A flexible, production-ready **Backend Skeleton** designed for **Node.js** and **TypeScript** projects of all sizes. It implements **Vertical Slicing** and **Clean Architecture** by organizing code into specific **Application Cases** (app cases), promoting high maintainability and decoupled domain logic.
+**A reference for structuring backend code so that people *and* AI coding agents can find,
+change and verify one feature without reading the whole codebase.**
 
+Organize code by **app cases**: one folder per user intent (an endpoint, a Lambda handler,
+a command) containing its controller, app rules, tests and a short "slice card".
+Add Clean Architecture and DDD only when the domain needs them.
 
-## Explanation
-This isn't a brand new architecture, but rather a clear way to visualize and implement "vertical slicing" in your codebase.
-- [Application cases (app cases)](./doc/application-cases/README.md)
-- [Domain](./doc/domain/README.md)
+```diff
+- src/controllers/UserController.ts      # 1 feature = edits in 3 folders
+- src/services/UserService.ts            # 40 methods, everyone edits it
+- src/repositories/UserRepository.ts
++ src/modules/users/app-cases/sign-up-user/
++   README.md            # slice card: trigger, input, output, errors, rules
++   app-rules.ts         # the application rules for this one intent
++   app-rules.test.ts
++   http-controller.ts   # HTTP <-> app rules, nothing else
+```
+
+## Why it matters even more with AI agents
+
+An agent is only as good as the context it loads and the feedback it gets.
+Vertical slices give it both:
+
+- **Small, relevant context:** one folder holds one intent, so there is no need to read a 2,000-line `UserService`.
+- **Predictable shape:** every slice looks the same, so "create `cancel-order` like its siblings" just works.
+- **Small blast radius:** diffs stay inside a slice and are easy for a person to review.
+- **Parallel work:** several agents can each own a slice without merge conflicts.
+- **Fast verification:** per-slice tests plus a [boundary checker](scripts/check-boundaries.mjs) that
+  fails when an app case imports another one.
+
+Read more in [Vertical slicing in the age of AI coding agents](doc/ai-agents/README.md).
+
+## Start here
+
+| If you are… | Go to |
+|---|---|
+| Learning the idea | [Conventions (the rules and glossary)](doc/conventions.md) · [App cases](doc/application-cases/README.md) · [Domain](doc/domain/README.md) · [Repository](doc/repository/README.md) |
+| Looking for code | [**`examples/blog-api`**](examples/blog-api): runnable, tested, zero runtime dependencies |
+| Comparing approaches | [Package by layer vs feature vs app case](examples/vs) |
+| An AI agent | [`AGENTS.md`](AGENTS.md) · [`llms.txt`](llms.txt) |
+| Adopting it in your project | [`templates/AGENTS.md`](templates/AGENTS.md) · [`create-app-case` skill](skills/create-app-case/SKILL.md) · [`check-boundaries.mjs`](scripts/check-boundaries.mjs) |
+
+## Try it
+
+```bash
+cd examples/blog-api
+npm ci
+npm run check   # typecheck + boundary rules + 24 tests
+npm start       # http://localhost:3000
+```
 
 ## Examples
-- [Simple Serverless MVP](./examples/simple-mvp-serverless)  
+
+| Example | What it shows | Runnable |
+|---|---|---|
+| [blog-api](examples/blog-api) | Modules, app cases, optional domain, repositories, composition root, tests | ✅ |
+| [simple-crud](examples/simple-crud) | MVP: one level of app cases, no domain | Shape only |
+| [modular-crud](examples/modular-crud) | Same as above, grouped by module | Shape only |
+| [simple-mvp-serverless](examples/simple-mvp-serverless) | One Lambda handler per app case | Shape only |
+| [enterprise-project](examples/enterprise-project) | Modules with domain, repository and several transports per app case | Shape only |
+| [Event Sourcing POC](https://github.com/m-arrieta-r/event-sourcing-poc) | A lending origination system built with this structure | ✅ (separate repository) |
+
 ![Simple Serverless MVP](./examples/simple-mvp-serverless/doc/diagram-look4.svg)
-- [Enterprise-project](./examples/enterprise-project). 
-![Enterprise Architecture Diagram](./examples/enterprise-project/doc/diagram-look4.svg)
-- [Event Sourcing POC (Lending Origination System)](https://github.com/m-arrieta-r/event-sourcing-poc)
+![Enterprise project](./examples/enterprise-project/doc/diagram-look4.svg)
 
 ## Motivation
-Many existing folder conventions rely on traditional layered structures (package by layer), sometimes mistakenly labeled as "hexagonal" or "clean architecture." However, these architectures don't inherently dictate a horizontal (layered) approach.
 
-Let's move away from big service files and horizontal folder structures!
+Many folder conventions use a horizontal, layered structure (package by layer) and call it
+"hexagonal" or "clean architecture". Those architectures say nothing about grouping files by
+technical layer. They are about the **direction of dependencies**. This repository is not a new
+architecture. It is a clear, repeatable way to implement vertical slicing so that the structure
+*screams* the use cases.
 
-## Key Insights
-> "A layered architecture doesn't scream anything about business domain"  
-— Missing chapter, Clean architecture, Robert C Martin and Simon Brown  
+> "A layered architecture doesn't scream anything about business domain"
+> — Simon Brown, *The Missing Chapter*, in *Clean Architecture* (Robert C. Martin)
 
-> "As an application grows, each layer can get sufficiently complex on its own that you need to modularize further. When this happens it's usually not best to use presentation-domain-data as the higher level of modules. Often frameworks encourage you to have something like view-model-data as the top level namespaces; that's OK for smaller systems, but once any of these layers gets too big you should split your top level into domain oriented modules which are internally layered."  
-— Presentation Domain Data Layering, Martin Fowler
- 
-> "The pattern has absolutely nothing to say about how you structure your application internally."  
-— Hexagonal Architecture, Alistair Cockburn
+> "As an application grows, each layer can get sufficiently complex on its own that you need to modularize further. When this happens it's usually not best to use presentation-domain-data as the higher level of modules. […] once any of these layers gets too big you should split your top level into domain oriented modules which are internally layered."
+> — Martin Fowler, [Presentation Domain Data Layering](https://martinfowler.com/bliki/PresentationDomainDataLayering.html)
+
+> "The pattern has absolutely nothing to say about how you structure your application internally."
+> — Alistair Cockburn, Hexagonal Architecture
 
 ## Compatibility
-This structure has been successfully tested with:
-- Serverless architectures using Lambda handlers
-- NodeJs (ExpressJS, KoaJS, CLI)
-- Domain-Driven Design (DDD)
-- MVPs (without clean or hexagonal architecture)
-- NestJS (avoiding excessive service files)
-- Enterprise Projects (with clean architecture and DDD)
+
+The structure has been used with:
+- Serverless (AWS Lambda handlers)
+- Node.js HTTP frameworks (Express, Koa) and CLIs
+- NestJS (as an alternative to large service classes)
+- MVPs without Clean/Hexagonal Architecture
+- Enterprise projects with Clean Architecture and DDD
 
 ## Inspiration
-- [DDD Forum by Khalil Stemmler](https://github.com/stemmlerjs/ddd-forum)
-- [Clean architecture by Uncle Bob](https://web.archive.org/web/20140619161546/https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
-- [Screaming Architecture by Uncle Bob](https://web.archive.org/web/20140702193834/http://blog.8thlight.com/uncle-bob/2011/09/30/Screaming-Architecture.html)
 
-## Guiding Principles
-- **Prioritize Critical Thinking:** Don't always rely on common sense; it might not be accurate.
-- **Learn from Others:** Many people (some of them popular) have likely encountered similar challenges. Follow their lead.
-- **Discover Better Ways to Develop Software**: Embracing experimentation is crucial for enhancing project success.
+- [DDD Forum](https://github.com/stemmlerjs/ddd-forum) by Khalil Stemmler
+- [The Clean Architecture](https://web.archive.org/web/20140619161546/https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) by Robert C. Martin
+- [Screaming Architecture](https://web.archive.org/web/20140702193834/http://blog.8thlight.com/uncle-bob/2011/09/30/Screaming-Architecture.html) by Robert C. Martin
+- [Vertical Slice Architecture](https://www.jimmybogard.com/vertical-slice-architecture/) by Jimmy Bogard
+
+## Guiding principles
+
+- **Think critically.** "Common sense" in software is often just habit.
+- **Learn from others.** Many people have hit the same problems. Read them and cite them.
+- **Experiment.** Better ways to build software are found by trying them.
+
+## Contributing
+
+Ideas, examples in other stacks and corrections are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
-
----
-
-[MIT](https://opensource.org/licenses/MIT) © 2026 m-arrieta-r
-
-<!--
-  SEO Metadata for Search Engines (JSON-LD)
-  This helps search engines like Google understand the repository structure and license.
--->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareSourceCode",
-  "name": "backend-skeleton",
-  "description": "A flexible folder structure designed for projects of all sizes, based on organizing code by specific package by application cases.",
-  "codeRepository": "https://github.com/miarrietar/backend-skeleton",
-  "programmingLanguage": "TypeScript",
-  "license": "https://github.com/miarrietar/backend-skeleton/blob/main/LICENSE.md",
-  "author": {
-    "@type": "Person",
-    "name": "m-arrieta-r"
-  },
-  "keywords": "backend, skeleton, architecture, vertical-slicing, ddd, clean-architecture, hexagonal-architecture, typescript, nodejs"
-}
-</script>
-
-
+[MIT](LICENSE.md) © m-arrieta-r
