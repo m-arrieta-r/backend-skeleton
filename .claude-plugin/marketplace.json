@@ -1,0 +1,19 @@
+{
+  "name": "backend-skeleton",
+  "description": "Vertical slicing (app cases) for backends: Agent Skills from m-arrieta-r/backend-skeleton.",
+  "owner": {
+    "name": "m-arrieta-r"
+  },
+  "plugins": [
+    {
+      "name": "app-cases",
+      "description": "Scaffold app cases (vertical slices) with their slice card and tests, following the backend-skeleton conventions.",
+      "source": "./",
+      "strict": false,
+      "skills": ["./skills/create-app-case"],
+      "homepage": "https://github.com/m-arrieta-r/backend-skeleton",
+      "license": "MIT",
+      "keywords": ["vertical-slicing", "vertical-slice-architecture", "clean-architecture", "ddd", "typescript", "nodejs"]
+    }
+  ]
+}
